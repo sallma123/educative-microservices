@@ -2,6 +2,7 @@ package com.example.mscours.controllers;
 
 import com.example.mscours.entities.Course;
 import com.example.mscours.services.CourseService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +12,10 @@ import java.util.List;
 public class CourseController {
 
     private final CourseService courseService;
+
+    // CONFIG SERVER TEST
+    @Value("${mes-config-ms.cours-last:10}")
+    private int lastCourses;
 
     public CourseController(CourseService courseService) {
         this.courseService = courseService;
@@ -32,5 +37,11 @@ public class CourseController {
     @GetMapping("/{id}")
     public Course getCourseById(@PathVariable Long id) {
         return courseService.getCourseById(id);
+    }
+
+    // CONFIG SERVER TEST
+    @GetMapping("/config/last")
+    public int getLastCoursesConfig() {
+        return lastCourses;
     }
 }

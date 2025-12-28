@@ -4,10 +4,11 @@ server:
 spring:
   application:
     name: config-server
+
   cloud:
     config:
       server:
-        native:
-          search-locations: file:///C:/Users/T14s/Desktop/educative-microservices/config-repo
-  profiles:
-    active: native
+        git:
+          uri: https://github.com/sallma123/educative-microservices.git
+          search-paths: config-repo
+          default-label: main
