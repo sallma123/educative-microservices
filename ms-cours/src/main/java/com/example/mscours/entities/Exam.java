@@ -1,5 +1,6 @@
 package com.example.mscours.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
@@ -15,9 +16,9 @@ public class Exam {
 
     @ManyToOne
     @JoinColumn(name = "course_id")
+    @JsonIgnore
     private Course course;
 
-    // Constructeur vide (OBLIGATOIRE pour JPA)
     public Exam() {}
 
     public Exam(String title, LocalDate examDate, Course course) {
@@ -26,7 +27,6 @@ public class Exam {
         this.course = course;
     }
 
-    // Getters & Setters
     public Long getId() {
         return id;
     }
