@@ -5,10 +5,13 @@ spring:
   application:
     name: config-server
 
+  profiles:
+    active: git
+
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/sallma123/educative-microservices.git
+          uri: https://github.com/sallma123/educative-microservices
           search-paths: config-repo
           default-label: main
