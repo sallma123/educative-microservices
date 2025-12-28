@@ -1,1 +1,32 @@
-spring.application.name=ms-etudiants
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ms-etudiants
+
+  datasource:
+    url: jdbc:h2:mem:etudiants-db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  h2:
+    console:
+      enabled: true
+
+eureka:
+  client:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
