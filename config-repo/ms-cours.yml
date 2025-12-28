@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: ms-cours
-
-mes-config-ms:
-  cours-last: 10
