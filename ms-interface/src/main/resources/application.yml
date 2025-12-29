@@ -6,7 +6,7 @@ spring:
     name: ms-interface
 
   config:
-    import: optional:configserver:http://localhost:8888
+    import: optional:config-server:http://localhost:8888
 
 eureka:
   client:
@@ -14,3 +14,13 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+  endpoint:
+    info:
+      enabled: true
