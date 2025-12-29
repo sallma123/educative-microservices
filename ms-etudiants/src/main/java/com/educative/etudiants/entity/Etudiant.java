@@ -1,9 +1,6 @@
 package com.educative.etudiants.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 
 @Entity
 public class Etudiant {
@@ -16,14 +13,14 @@ public class Etudiant {
     private String prenom;
     private String email;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "profil_id")
+    private Profil profil;
+
     public Etudiant() {}
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNom() {
@@ -48,5 +45,13 @@ public class Etudiant {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Profil getProfil() {
+        return profil;
+    }
+
+    public void setProfil(Profil profil) {
+        this.profil = profil;
     }
 }

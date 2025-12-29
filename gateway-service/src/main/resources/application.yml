@@ -16,12 +16,12 @@ spring:
         - id: ms-etudiants
           uri: lb://ms-etudiants
           predicates:
-            - Path=/ms-etudiants/**
+            - Path=/etudiants/**,/profils/**
 
         - id: ms-cours
           uri: lb://ms-cours
           predicates:
-            - Path=/ms-cours/**
+            - Path=/courses/**,/exams/**
 
 eureka:
   client:
