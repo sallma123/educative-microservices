@@ -26,7 +26,7 @@ public class PortalController {
     public Map<String, Object> getStudentPortal(@PathVariable Long id) {
 
         EtudiantDTO etudiant = etudiantClient.getEtudiant(id);
-        List<CoursDTO> cours = coursClient.getCoursByEtudiant(id);
+        List<CoursDTO> cours = coursClient.getAllCourses(); // temporaire
 
         Map<String, Object> response = new HashMap<>();
         response.put("etudiant", etudiant);
@@ -34,4 +34,5 @@ public class PortalController {
 
         return response;
     }
+
 }

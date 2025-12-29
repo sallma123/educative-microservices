@@ -10,6 +10,6 @@ import java.util.List;
 @FeignClient(name = "ms-cours")
 public interface CoursClient {
 
-    @GetMapping("/cours/etudiant/{id}")
-    List<CoursDTO> getCoursByEtudiant(@PathVariable Long id);
+    @GetMapping("/courses") // ✅ URL EXISTANTE
+    List<CoursDTO> getAllCourses();
 }
