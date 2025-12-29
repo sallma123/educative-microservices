@@ -6,7 +6,7 @@ spring:
     name: ms-interface
 
   config:
-    import: optional:config-server:http://localhost:8888
+    import: "optional:configserver:"
 
 eureka:
   client:
