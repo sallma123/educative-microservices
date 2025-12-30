@@ -292,6 +292,8 @@ Elle constitue une base solide pour des évolutions futures telles que :
 
 Ce travail répond pleinement aux objectifs pédagogiques fixés pour le projet.
 
+---
+
 Réalisé par : SEDRATI Salma & GAROUAT NADA & BOUTGHANBOUT Safa
 
 Encadré par : JAADOUNI Hatim
