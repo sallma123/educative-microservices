@@ -293,3 +293,6 @@ Elle constitue une base solide pour des évolutions futures telles que :
 Ce travail répond pleinement aux objectifs pédagogiques fixés pour le projet.
 
 Réalisé par : SEDRATI Salma & GAROUAT NADA & BOUTGHANBOUT Safa
+Encadré par : JAADOUNI Hatim
+Classe : 5IIR-8
+Année universitaire : 2025 - 2026
