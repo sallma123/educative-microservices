@@ -1,6 +1,7 @@
 package com.example.mscours.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
@@ -12,6 +13,9 @@ public class Exam {
     private Long id;
 
     private String title;
+
+    // ✅ ANNOTATION CRITIQUE
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate examDate;
 
     @ManyToOne

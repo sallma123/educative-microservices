@@ -7,11 +7,29 @@ spring:
 
   cloud:
     gateway:
+      # 🔹 Découverte automatique des services via Eureka
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
 
+      # 🔹 CONFIGURATION CORS (OBLIGATOIRE POUR REACT)
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+      # 🔹 ROUTES VERS LES MICROSERVICES
       routes:
         - id: ms-etudiants
           uri: lb://ms-etudiants
@@ -22,7 +40,13 @@ spring:
           uri: lb://ms-cours
           predicates:
             - Path=/courses/**,/exams/**
+          filters:
+            - PreserveHostHeader
 
+        - id: ms-interface
+          uri: lb://ms-interface
+          predicates:
+            - Path=/portal/**
 eureka:
   client:
     service-url:

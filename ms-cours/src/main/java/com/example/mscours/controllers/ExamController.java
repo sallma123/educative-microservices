@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/courses/{courseId}/exams")
@@ -17,15 +18,18 @@ public class ExamController {
         this.examService = examService;
     }
 
-    // Ajouter un examen à un cours
+    // ✅ Ajouter un examen à un cours (JSON depuis React)
     @PostMapping
     public Exam addExam(@PathVariable Long courseId,
-                        @RequestParam String title,
-                        @RequestParam LocalDate date) {
-        return examService.addExamToCourse(courseId, title, date);
+                        @RequestBody Map<String, String> payload) {
+
+        String title = payload.get("title");
+        LocalDate examDate = LocalDate.parse(payload.get("examDate"));
+
+        return examService.addExamToCourse(courseId, title, examDate);
     }
 
-    // Lister les examens d’un cours
+    // ✅ Lister les examens d’un cours
     @GetMapping
     public List<Exam> getExamsByCourse(@PathVariable Long courseId) {
         return examService.getExamsByCourse(courseId);
