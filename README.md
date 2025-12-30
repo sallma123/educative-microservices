@@ -1,4 +1,4 @@
-# Application Académique – Architecture Microservices
+# Application éducative – Architecture Microservices
 
 ## 1. Présentation générale
 
